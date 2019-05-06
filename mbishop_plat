@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    active:
+    - dev
+---
+server: 
+  port: 4396
+spring:
+  profiles: dev #开发环境
+  application:
+    name: mbishop-plat
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    prefer-ip-address: true
+---
+server: 
+  port: 4397
+spring:
+  profiles: test #测试环境
+  application:
+    name: MICROSERVICE-USER-TEST
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    prefer-ip-address: true
